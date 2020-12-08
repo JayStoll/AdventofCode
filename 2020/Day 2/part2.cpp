@@ -31,11 +31,8 @@ int main() {
         letter = toParse[2];
         password = toParse[3];
 
-        int count = 0;
-        for (int i = 0; i < password.length(); i++) {
-            if (password[i] == letter[0]) count++;
-        }
-        if (count >= low && count <= high) validPass++;
+        if ((password[low-1] == letter[0] && password[high-1] != letter[0]) 
+         || (password[low-1] != letter[0] && password[high-1] == letter[0])) validPass++;
     }
     f.close();
 
